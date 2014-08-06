@@ -1,0 +1,40 @@
+ANSWER: 2783915460
+
+still have:
+046
+|||||||||
+123456789
+
+0123 find 15
+
+0123 0132 0213 0231 0312 0321
+1023 1032 1203 1230 1302 1320
+2013 2031 2103 2130 2310 2301
+3012 3021 3120 3102 3201 3210
+
+2
+
+0123456789
+
+0123456789 0132456789 . . . 0987654321
+1023456789 1203456789 . . . 1987654320
+	.			
+	.			  .
+	.							. 
+9012345678 9102345678 . . . 9876543210
+
+Is the 274240th member of the 3rd line
+
+Algorithm:
+
+Given an array of numbers d, then we can have M rows where M = factorial (len(d)) / len(d). 
+
+N position of M permutations where M = factorial(d)/d
+if N % M > 0 
+	ans[i] = d[N/M]
+	N --
+	M -- 
+	d --
+else
+	ans[i] = d[N/M - 1]
+	ans[i+1:] = reverse(d)
