@@ -27,7 +27,13 @@ Is the 274240th member of the 3rd line
 
 Algorithm:
 
-Given an array of numbers d, then we can have M rows where M = factorial (len(d)) / len(d). 
+Given an array of numbers d and an answer array ans, we split up all possible permutations by row and column, where each row has the same starting number. There are factorial(len(d))/len(d) number of rows.
+
+We then calculate the number of columns in each row with C = factorial(len(d) - 1).
+
+To find position N, calculate N % C. If N % C != 0, then the next number in the answer array is given by the d[N/C] number. Remove the d[N/C] number from the array.
+
+If N % C == 0 then the next number in the array is d[N/C - 1] and the rest of the answer number is the reverse of the remainder of the d array.
 
 N position of M permutations where M = factorial(d)/d
 if N % M > 0 
